@@ -11,16 +11,17 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class Maillist {
+public class Maillist implements Connect {
 
-    public static List<String> getmailaddress(){
+    public  List<String> getmailaddress(){
 
+         Connect maildata= new Maildata();
         List<String> emails = new ArrayList<String>();
         PreparedStatement st;
         ResultSet rs;
         String query = "SELECT email FROM emailtable";
         try{
-            st= Maildata.getConnection().prepareStatement(query);
+            st= maildata.getConnection().prepareStatement(query);
             rs= st.executeQuery();
             while(rs.next()){
                 String output = (rs.getString(1));

@@ -24,14 +24,11 @@ public class Firstreadinglog extends Logfilehandler {
         List<Logvariables> loglines = super.readlogfile(logfilepath);
         for (Logvariables s : loglines) {
             if ((s.getLoglevel()).contains("ERROR")) {
-
                 if(errorstate==0) {
                     System.out.println("Error Found");
                     errorstate = 1;
                     sentmail.sendmail();
-
                 }
-
             }
         }
 

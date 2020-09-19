@@ -5,6 +5,7 @@ import com.mysql.cj.jdbc.MysqlDataSource;
 
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -16,7 +17,7 @@ public class Maildata implements Connect {
     private static String password ="";
     private static Object level;
 
-    public static Connection getConnection() throws SQLException
+    public  Connection getConnection() throws SQLException
     {
         Connection sql =null;
         MysqlDataSource datasource = new MysqlDataSource();
@@ -34,6 +35,12 @@ public class Maildata implements Connect {
 
         }
         return sql;
+    }
+
+
+    @Override
+    public List<String> getmailaddress() {
+        return null;
     }
 
 

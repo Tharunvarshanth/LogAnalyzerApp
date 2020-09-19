@@ -27,7 +27,13 @@ public class LogAnalyzerApp {
     }
 
     public void show() throws FileNotFoundException {
+
         String logfilepath=input.readFilepath();
+
+        //Checkinh Log file or other file
+        if(logfilepath==null){
+            return;
+        }
 
         if (!new FileExistence().isfilecreated()) {
             new CreateFile().createnewfile();

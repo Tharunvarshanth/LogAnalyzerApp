@@ -18,13 +18,12 @@ public class FirstreadinglogTest extends Logfilehandler{
     Mail sentmail  = mock(Mail.class);
 
     @Test
-    public void should_fetch_lines_from_readlogfile(){
-
+    public void should_fetch_lines_from_readlogfile_and_check_if_n_times_error_fount_it_calls_one_time_only_email_class(){
 
         Firstreadinglog firstreadinglog = new Firstreadinglog(textfile,logvariables,sentmail);
         firstreadinglog.errorchecking("src\\main\\resources\\example.log");
 
-      assertNotNull(super.readlogfile("src\\main\\resources\\example.log"));
-
+        assertNotNull(super.readlogfile("src\\main\\resources\\example.log"));
     }
+
 }

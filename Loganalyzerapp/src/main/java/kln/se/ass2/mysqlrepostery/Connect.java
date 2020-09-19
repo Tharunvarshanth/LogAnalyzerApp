@@ -2,10 +2,13 @@ package kln.se.ass2.mysqlrepostery;
 
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.List;
 
 public interface Connect {
-     static Connection getConnection() throws SQLException
+      default Connection getConnection() throws SQLException
      {
          return null;
      }
+
+     public List<String> getmailaddress();
 }

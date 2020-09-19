@@ -35,4 +35,6 @@ public abstract class Logfilehandler {
 
         return loglist;
     }
+
+
 }
