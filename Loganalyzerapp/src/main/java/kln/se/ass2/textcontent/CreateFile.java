@@ -2,7 +2,7 @@ package kln.se.ass2.textcontent;
 
 import java.io.IOException;
 
-public class CreateFile implements Textfile {
+public class CreateFile implements TextFile {
     public void createnewfile(){
         try {
             System.out.println("Text file created path is :- "+filepath);

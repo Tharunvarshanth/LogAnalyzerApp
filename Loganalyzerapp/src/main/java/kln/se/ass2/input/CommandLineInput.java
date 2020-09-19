@@ -10,8 +10,11 @@ public class CommandLineInput implements Input {
         Scanner input = new Scanner(System.in);
         System.out.println("Enter log file path");
         String logfilepath = input.nextLine();
+
         if(logfilepath.contains(".log")){
-             return logfilepath;}
+             return logfilepath;
+        }
+
         System.out.println("Program Terminated: It is not a Logfile");
           return null;
 

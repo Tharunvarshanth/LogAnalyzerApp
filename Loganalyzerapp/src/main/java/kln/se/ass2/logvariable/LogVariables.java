@@ -1,6 +1,6 @@
 package kln.se.ass2.logvariable;
 
-public class Logvariables implements Log {
+public class LogVariables implements Log {
 
    private String timestatmp;
    private String loglevel;
@@ -21,12 +21,12 @@ public class Logvariables implements Log {
     public void setLoglevel(String loglevel) {
         this.loglevel = loglevel;
     }
-    public Logvariables()
+    public LogVariables()
     {
 
     }
 
-    public Logvariables(String timestatmp, String loglevel, String message) {
+    public LogVariables(String timestatmp, String loglevel, String message) {
         this.timestatmp = timestatmp;
         this.loglevel = loglevel;
         this.message = message;

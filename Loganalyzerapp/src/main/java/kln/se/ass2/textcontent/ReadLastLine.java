@@ -3,7 +3,7 @@ package kln.se.ass2.textcontent;
 import java.io.*;
 import java.util.Scanner;
 
-public class ReadLastLine implements Textfile {
+public class ReadLastLine implements TextFile {
     public String readinglastline() throws FileNotFoundException {
         String strLine = null;
         String lastlinestring="";

@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class Maildata implements Connect {
+public class MailData implements Connect {
     private static String servername ="localhost";
     private static String username ="root";
     private static String dbname ="loganalyzerapp";
@@ -31,7 +31,7 @@ public class Maildata implements Connect {
         try{
             sql =datasource.getConnection();
         } catch(SQLException ex){
-            Logger.getLogger(" Get Connection -> " + Maildata.class.getName()).log(Level.SEVERE,null,ex);
+            Logger.getLogger(" Get Connection -> " + MailData.class.getName()).log(Level.SEVERE,null,ex);
 
         }
         return sql;

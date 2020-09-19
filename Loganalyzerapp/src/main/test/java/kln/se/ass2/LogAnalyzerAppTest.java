@@ -1,28 +1,21 @@
 package kln.se.ass2;
 
 import kln.se.ass2.input.Input;
-import kln.se.ass2.logfile.Firstreadinglog;
-import kln.se.ass2.logfile.Morereadinglog;
-import kln.se.ass2.mail.Mail;
-import kln.se.ass2.mail.SendMail;
-import kln.se.ass2.mysqlrepostery.Connect;
-import kln.se.ass2.mysqlrepostery.Maillist;
-import kln.se.ass2.textcontent.Textfile;
+import kln.se.ass2.logfile.FirstReadLogFile;
+import kln.se.ass2.logfile.MoreReadLogFile;
+import kln.se.ass2.textcontent.TextFile;
 
 import org.junit.Test;
 
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.List;
 
-import static org.junit.Assert.*;
 import static org.mockito.Mockito.*;
 
 public class LogAnalyzerAppTest {
 
-    Textfile textfilehandler = mock(Textfile.class);
-    Firstreadinglog firstreadinglog = mock(Firstreadinglog.class);
-    Morereadinglog morereadinglog   = mock(Morereadinglog.class);
+    TextFile textfilehandler = mock(TextFile.class);
+    FirstReadLogFile firstReadLogFile = mock(FirstReadLogFile.class);
+    MoreReadLogFile moreReadLogFile = mock(MoreReadLogFile.class);
     Input input = mock(Input.class);
 
     @Test
@@ -30,7 +23,7 @@ public class LogAnalyzerAppTest {
 
         when(input.readFilepath()).thenReturn("src\\main\\resources\\example.log");
 
-       LogAnalyzerApp logAnalyzerApp = new LogAnalyzerApp(textfilehandler,firstreadinglog,morereadinglog,input);
+       LogAnalyzerApp logAnalyzerApp = new LogAnalyzerApp(textfilehandler, firstReadLogFile, moreReadLogFile,input);
 
        logAnalyzerApp.show();
        verify(input).readFilepath();

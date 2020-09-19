@@ -2,14 +2,14 @@ package kln.se.ass2;
 
 import kln.se.ass2.input.CommandLineInput;
 import kln.se.ass2.input.Input;
-import kln.se.ass2.logfile.Firstreadinglog;
+import kln.se.ass2.logfile.FirstReadLogFile;
 import kln.se.ass2.logfile.Logfilehandler;
-import kln.se.ass2.logfile.Morereadinglog;
+import kln.se.ass2.logfile.MoreReadLogFile;
 import kln.se.ass2.logvariable.Log;
-import kln.se.ass2.logvariable.Logvariables;
+import kln.se.ass2.logvariable.LogVariables;
 import kln.se.ass2.mail.Mail;
 import kln.se.ass2.mail.SendMail;
-import kln.se.ass2.textcontent.Textfile;
+import kln.se.ass2.textcontent.TextFile;
 
 import java.io.FileNotFoundException;
 
@@ -19,15 +19,15 @@ public class Main {
 
 //logfilepath = "src\\main\\resources\\example.log";
         Input input=new CommandLineInput();
-        Textfile textfile=null;
-        Log logvariables=new Logvariables();
+        TextFile textfile=null;
+        Log logvariables=new LogVariables();
         Mail sendMail=new SendMail();
-        Firstreadinglog firstreadinglog = new Firstreadinglog(textfile,logvariables,sendMail);
+        FirstReadLogFile firstReadLogFile = new FirstReadLogFile(textfile,logvariables,sendMail);
         Logfilehandler logfilehandler = null;
-        Morereadinglog morereadinglog = new Morereadinglog(textfile,logvariables,sendMail);
+        MoreReadLogFile moreReadLogFile = new MoreReadLogFile(textfile,logvariables,sendMail);
 
 
-        LogAnalyzerApp app=new LogAnalyzerApp(textfile,firstreadinglog,morereadinglog,input);
+        LogAnalyzerApp app=new LogAnalyzerApp(textfile, firstReadLogFile, moreReadLogFile,input);
         app.show();
 
 

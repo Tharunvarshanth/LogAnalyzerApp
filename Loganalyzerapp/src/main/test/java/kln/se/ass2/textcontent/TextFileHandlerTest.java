@@ -6,7 +6,7 @@ import java.io.FileNotFoundException;
 
 import static org.junit.Assert.*;
 
-public class TextfilehandlerTest {
+public class TextFileHandlerTest {
 
     @Test
     public void file_created_or_not(){

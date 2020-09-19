@@ -1,7 +1,7 @@
 package kln.se.ass2.mail;
 
 import kln.se.ass2.mysqlrepostery.Connect;
-import kln.se.ass2.mysqlrepostery.Maillist;
+import kln.se.ass2.mysqlrepostery.MailList;
 
 import java.util.List;
 import java.util.Properties;
@@ -36,7 +36,7 @@ public class SendMail implements Mail {
                 return new PasswordAuthentication("softconsassiment2@gmail.com", "asanka2020");
             }
         });
-        Connect maillist = new Maillist();
+        Connect maillist = new MailList();
 
         List<String> emailToAddresses =maillist.getmailaddress();
         String emails = null;

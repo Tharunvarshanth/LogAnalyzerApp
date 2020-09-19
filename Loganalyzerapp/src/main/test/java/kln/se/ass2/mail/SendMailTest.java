@@ -1,11 +1,7 @@
 package kln.se.ass2.mail;
 
 import kln.se.ass2.mysqlrepostery.Connect;
-import kln.se.ass2.mysqlrepostery.Maillist;
 import org.junit.Test;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.*;

@@ -1,28 +1,28 @@
 package kln.se.ass2;
 
 import kln.se.ass2.input.Input;
-import kln.se.ass2.logfile.Firstreadinglog;
-import kln.se.ass2.logfile.Morereadinglog;
-import kln.se.ass2.logvariable.Logvariables;
+import kln.se.ass2.logfile.FirstReadLogFile;
+import kln.se.ass2.logfile.MoreReadLogFile;
+import kln.se.ass2.logvariable.LogVariables;
 import kln.se.ass2.textcontent.CreateFile;
 import kln.se.ass2.textcontent.FileExistence;
 import kln.se.ass2.textcontent.ReadLastLine;
-import kln.se.ass2.textcontent.Textfile;
+import kln.se.ass2.textcontent.TextFile;
 
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 
 public class LogAnalyzerApp {
-    Textfile textfile;
-    Firstreadinglog firstreadinglog;
-    Morereadinglog morereadinglog;
+    TextFile textfile;
+    FirstReadLogFile firstReadLogFile;
+    MoreReadLogFile moreReadLogFile;
     Input input;
-    public LogAnalyzerApp(Textfile textfile, Firstreadinglog firstreadinglog, Morereadinglog morereadinglog, Input input)
+    public LogAnalyzerApp(TextFile textfile, FirstReadLogFile firstReadLogFile, MoreReadLogFile moreReadLogFile, Input input)
     {
         this.textfile=textfile;
-        this.firstreadinglog=firstreadinglog;
-        this.morereadinglog=morereadinglog;
+        this.firstReadLogFile = firstReadLogFile;
+        this.moreReadLogFile = moreReadLogFile;
         this.input=input;
     }
 
@@ -37,17 +37,17 @@ public class LogAnalyzerApp {
 
         if (!new FileExistence().isfilecreated()) {
             new CreateFile().createnewfile();
-            firstreadinglog.errorchecking(logfilepath);
+            firstReadLogFile.errorchecking(logfilepath);
         }
 
         else {
             String previoustimestamp = new ReadLastLine().readinglastline();
-            List<Logvariables> newlogslist = new ArrayList<Logvariables>();
-            newlogslist = morereadinglog.getcurrentlogstates(logfilepath, previoustimestamp);
+            List<LogVariables> newlogslist = new ArrayList<LogVariables>();
+            newlogslist = moreReadLogFile.getcurrentlogstates(logfilepath, previoustimestamp);
             if(newlogslist.isEmpty()){
                 return ;
             }
-            morereadinglog.errorchecking(newlogslist);
+            moreReadLogFile.errorchecking(newlogslist);
         }
 
     }

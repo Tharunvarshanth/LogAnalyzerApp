@@ -1,6 +1,6 @@
 package kln.se.ass2.logfile;
 
-import kln.se.ass2.logvariable.Logvariables;
+import kln.se.ass2.logvariable.LogVariables;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -11,10 +11,10 @@ import java.util.List;
 public abstract class Logfilehandler {
 
 
-    public  List<Logvariables> readlogfile(String logfilepath) {
+    public  List<LogVariables> readlogfile(String logfilepath) {
 
-        List<Logvariables> loglist = new ArrayList<Logvariables>();
-        Logvariables logvariables;
+        List<LogVariables> loglist = new ArrayList<LogVariables>();
+        LogVariables logvariables;
 
         try {
             FileReader fr = new FileReader(logfilepath);
@@ -24,7 +24,7 @@ public abstract class Logfilehandler {
 
             while ((line = br.readLine()) != null) {
                 String[] strings= line.split(" ");
-                loglist.add(new Logvariables(strings[0],strings[1],strings[2]));
+                loglist.add(new LogVariables(strings[0],strings[1],strings[2]));
 
                 previousline = line;
             }

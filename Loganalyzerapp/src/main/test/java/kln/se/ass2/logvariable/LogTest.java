@@ -7,7 +7,7 @@ import static org.mockito.Mockito.mock;
 
 public class LogTest {
 
-    Log logvariables =new Logvariables("2020-09-06T17:28:11Z","INFO","MESSAGE");
+    Log logvariables =new LogVariables("2020-09-06T17:28:11Z","INFO","MESSAGE");
 
     @Test
    public void gets_the_values_from_logvariables_class_gettimestampt() {
